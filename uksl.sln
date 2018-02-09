@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uksl", "uksl\uksl.csproj", "{60F60319-D5B9-485E-89A8-12605A3D72C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uksl.DAL", "uksl.DAL\uksl.DAL.csproj", "{C570B3C0-9D58-490C-80C2-3BC144CD4D8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{60F60319-D5B9-485E-89A8-12605A3D72C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F60319-D5B9-485E-89A8-12605A3D72C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60F60319-D5B9-485E-89A8-12605A3D72C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C570B3C0-9D58-490C-80C2-3BC144CD4D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C570B3C0-9D58-490C-80C2-3BC144CD4D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C570B3C0-9D58-490C-80C2-3BC144CD4D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C570B3C0-9D58-490C-80C2-3BC144CD4D8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
