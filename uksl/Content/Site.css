@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top:25px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,46 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+p, li{
+    text-align:justify;
+}
+
+/*ol {
+    counter-reset: item
+}
+
+li {
+    display: block
+}
+
+    li:before {
+        content: counters(item, ".") " ";
+        counter-increment: item
+    }*/
+
+.regulation-menu {
+    background: rgba(0, 0, 0, 0.40);
+    position: fixed;
+    width: 390px;
+    left: -370px;
+    top: 200px;
+}
+    .regulation-menu:hover {
+        left: 0px;
+    }
+    .regulation-menu a {
+        margin: 5px 10px;
+        text-decoration: none;
+        padding: 3px;
+        display: block;
+        color:black;
+        /*background: rgba(0, 0, 0, 0.40);*/
+    }
+    .regulation-menu a:hover{
+        background: rgba(159, 38, 38, 0.40);
+    }
+.anch{
+    height:50px;
 }
