@@ -28,25 +28,39 @@ p, li{
     text-align:justify;
 }
 
-/*ol {
-    counter-reset: item
+/*ol li div.li {
+    display: inline;
+}*/
+
+ol {
+    counter-reset: item;
+    padding-left:0px;
 }
 
-li {
-    display: block
-}
+    ol li {
+        display: block;
+    }
 
-    li:before {
-        content: counters(item, ".") " ";
-        counter-increment: item
-    }*/
+        ol li:before {
+            content: counters(item,"." ) ". ";
+            counter-increment: item;
+        }
+        ol li h5 {
+            display: inline-block;
+            text-decoration:underline;
+        }
+ul li:before{
+    content: none;
+}
 
 .regulation-menu {
     background: rgba(0, 0, 0, 0.40);
+    background: rgb(0, 0, 0);
     position: fixed;
     width: 390px;
     left: -370px;
     top: 200px;
+    transition: left 0.5s ease-out 0.0s;
 }
     .regulation-menu:hover {
         left: 0px;
@@ -56,11 +70,12 @@ li {
         text-decoration: none;
         padding: 3px;
         display: block;
-        color:black;
+        color: #999999;
         /*background: rgba(0, 0, 0, 0.40);*/
     }
     .regulation-menu a:hover{
         background: rgba(159, 38, 38, 0.40);
+        color:#dc1010;
     }
 .anch{
     height:50px;
