@@ -7,7 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    margin-top:25px;
+    margin-top: 25px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,8 +24,8 @@ textarea {
     max-width: 280px;
 }
 
-p, li{
-    text-align:justify;
+p, li {
+    text-align: justify;
 }
 
 /*ol li div.li {
@@ -34,7 +34,7 @@ p, li{
 
 ol {
     counter-reset: item;
-    padding-left:0px;
+    padding-left: 0px;
 }
 
     ol li {
@@ -45,16 +45,18 @@ ol {
             content: counters(item,"." ) ". ";
             counter-increment: item;
         }
+
         ol li h5 {
             display: inline-block;
-            text-decoration:underline;
+            text-decoration: underline;
         }
-ul li:before{
+
+ul li:before {
     content: none;
 }
 
 .regulation-menu {
-    background: rgb(0, 0, 0);
+    background: #080808;
     position: fixed;
     width: 390px;
     left: -370px;
@@ -84,6 +86,38 @@ ul li:before{
             color: #dc1010;
             background-position: left bottom;
         }
-.anch{
-    height:50px;
+
+.anch {
+    height: 50px;
 }
+
+.btn-uksl {
+    background: rgb(0, 0, 0);
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    /*color: #999999;*/
+    /*background-size: 200% 100%;*/
+    /*background-position: right bottom;*/
+    /*transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;*/
+}
+.btn-uksl:hover {
+    background: rgb(0, 0, 0);
+    /*color: #999999;*/
+    /*background-size: 200% 100%;*/
+    /*background-position: right bottom;*/
+    /*transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;*/
+}
+
+    .btn-uksl span {
+        display: block;
+        background: rgb(0, 0, 0);
+        height: inherit;
+        color: #999999;
+        /*background-position: left bottom;*/
+    }
+
+        .btn-uksl span:hover {
+            color: #dc1010;
+            /*background-position: left bottom;*/ background: rgba(159, 38, 38, 0.40);
+        }

@@ -54,15 +54,15 @@ namespace uksl
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "340096623158557",
+               appSecret: "045c3e47de9603cff2c10662d2e32bfa");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "260947352383-5gq0k7ubhrh1l0ah2duu6sje3044ivn9.apps.googleusercontent.com",
+                ClientSecret = "KVhZv1xejoMoGBEdusqcfvc9"
+            });
         }
     }
 }
