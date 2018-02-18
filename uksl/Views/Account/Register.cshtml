@@ -31,6 +31,47 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            <div class="checkbox">
+                <input type="checkbox" id="chkbGamer"/>
+                <label>Беру участь в іграх</label>
+            </div>
+        </div>
+    </div>
+    <div id="gamerFields" style="display:none">
+        <div class="form-group">
+            @Html.LabelFor(m => m.NickName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.NickName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SelectedUniversity, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(m=>m.SelectedUniversity.Id, (IEnumerable<SelectListItem>)Model.UniversityList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <input type="date" class="form-control" value="@Model.BirthDate"/>
+                @*@Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control date-picker" })*@
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Зареєструватися" />
         </div>
     </div>
@@ -39,3 +80,19 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    $(function () {
+        // This will make every element with the class "date-picker" into a DatePicker element
+        
+        $("#chkbGamer").click(function () {
+            if ($(this).is(':checked')) {
+                $("#gamerFields").show();
+            }
+            else {
+                $("#gamerFields").hide();
+            }
+        });
+    });
+</script>

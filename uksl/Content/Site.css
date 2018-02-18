@@ -75,10 +75,10 @@ ul li:before {
         display: block;
         color: #999999;
         /*background: rgba(0, 0, 0, 0.40);*/
-        background: linear-gradient(to left, rgb(0, 0, 0) 50%, rgba(159, 38, 38, 0.40) 50%);
+        background: linear-gradient(to left, #080808 50%, rgba(159, 38, 38, 0.40) 50%);
         background-size: 200% 100%;
         background-position: right bottom;
-        transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;
+        transition: background-position 0.3s ease-out 0.0s, color 0.3s ease-out 0.0s;
     }
 
         .regulation-menu a:hover {
@@ -92,27 +92,27 @@ ul li:before {
 }
 
 .btn-uksl {
-    background: rgb(0, 0, 0);
+    background: #080808;
     margin: 0px;
     padding: 0px;
-    height: 40px;
+    /*height: 40px;*/
     /*color: #999999;*/
     /*background-size: 200% 100%;*/
     /*background-position: right bottom;*/
     /*transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;*/
 }
-.btn-uksl:hover {
-    background: rgb(0, 0, 0);
-    /*color: #999999;*/
-    /*background-size: 200% 100%;*/
-    /*background-position: right bottom;*/
-    /*transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;*/
-}
+    .btn-uksl:hover {
+        background: #080808;
+        /*color: #999999;*/
+        /*background-size: 200% 100%;*/
+        /*background-position: right bottom;*/
+        /*transition: background-position 0.5s ease-out 0.0s, color 0.5s ease-out 0.0s;*/
+    }
 
     .btn-uksl span {
         display: block;
-        background: rgb(0, 0, 0);
-        height: inherit;
+        background: #080808;
+        line-height: 40px;
         color: #999999;
         /*background-position: left bottom;*/
     }
