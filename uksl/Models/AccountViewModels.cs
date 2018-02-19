@@ -98,6 +98,11 @@ namespace uksl.Models
         [Display(Name = "Прізвище")]
         [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string LastName { get; set; }
+        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        [DataType(DataType.Text)]
+        [Display(Name = "По-батькові")]
+        [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
+        public string MiddleName { get; set; }
 
         [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Date)]

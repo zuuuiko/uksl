@@ -121,3 +121,9 @@ ul li:before {
             color: #dc1010;
             /*background-position: left bottom;*/ background: rgba(159, 38, 38, 0.40);
         }
+.date-picker:hover {
+    cursor: pointer;
+}
+.ui-autocomplete-loading {
+    background: white url("Images/Dual_Ring-1s-16px.gif") right center no-repeat;
+}
