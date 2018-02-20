@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Universities>
+<ArrayOfUniversity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <University>
     <UniversityName>Академія праці, соціальних відносин і туризму</UniversityName>
     <UniversityId>53</UniversityId>
@@ -30800,4 +30800,4 @@
     <UniversityDirectorPost>Директор</UniversityDirectorPost>
     <UniversityDirectorFio>Лисенко Юрій Васильович</UniversityDirectorFio>
   </University>
-</Universities>
+</ArrayOfUniversity>

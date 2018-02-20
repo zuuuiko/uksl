@@ -15,4 +15,14 @@ namespace uksl.DAL.Interfaces
         void Update(T item);
         void Delete(int id);
     }
+    public static class RepoFabric
+    {
+        public static IRepository<T> Create<T>(string connectionString) where T : class
+        {
+            var repoClassName = "uksl.DAL.Repositories." + typeof(T).Name + "Repo`1"; ;
+            Type generic = Type.GetType(repoClassName);
+            Type constructedType = generic.MakeGenericType(typeof(T));
+            return Activator.CreateInstance(constructedType, new object[] { connectionString }) as IRepository<T>;
+        }
+    }
 }

@@ -1,5 +1,24 @@
 ﻿$(function () {
-    // This will make every element with the class "date-picker" into a DatePicker element
+    $.ajax({
+        url: "../Content/data/vuz.json",
+        dataType: "json",
+        success: function (xmlResponse) {
+            var data = $.map(xmlResponse, function (item) {
+                return {
+                    value: item.UniversityShortName,
+                    id: item.UniversityId
+                };
+            });
+            $("#university").autocomplete({
+                source: data,
+                minLength: 2,
+                select: function (event, ui) {
+                    $("#university").val(ui.item.id);
+                }
+            });
+        }
+    });
+
     var maxDate = new Date();
     maxDate.setFullYear(maxDate.getFullYear() - 16);
     $.datepicker.regional['ua'] = {
@@ -42,24 +61,12 @@
             $("#middleName").show();
         }
     });
-
-    $.ajax({
-        url: "../Content/data/vuz.xml",
-        dataType: "xml",
-        success: function (xmlResponse) {
-            var data = $("University", xmlResponse).map(function () {
-                return {
-                    value: $("UniversityName", this).text(),
-                    id: $("UniversityId", this).text()
-                };
-            }).get();
-            $("#university").autocomplete({
-                source: data,
-                minLength: 2,
-                select: function (event, ui) {
-                    $("#university").val(ui.item.id);
-                }
-            });
+    $("#chkbPersonal").click(function () {
+        if ($(this).is(':checked')) {
+            $(':input[type="submit"]').prop('disabled', false);
+        }
+        else {
+            $(':input[type="submit"]').prop('disabled', true);
         }
     });
 });

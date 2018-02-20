@@ -140,14 +140,7 @@ namespace uksl.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            RegisterViewModel model = new RegisterViewModel
-            {
-                UniversityList = new List<SelectListItem> {
-                     new SelectListItem { Value="1", Text="КНЕУ" },
-                     new SelectListItem { Value ="2", Text="КПІ" }
-                        }
-            };
-            return View(model);
+            return View();
         }
 
         //
