@@ -65,12 +65,12 @@ namespace uksl.Models
 
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [EmailAddress(ErrorMessage = "Поле Email має не дійсне значення.")]
+        [Required(ErrorMessage = "обов'язкове")]
+        [EmailAddress(ErrorMessage = "не дійсне значення")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        [Required(ErrorMessage = "обов'язкове")]
         [StringLength(100, ErrorMessage = "{0} має складатися мінімум з {2} символів.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
@@ -81,45 +81,46 @@ namespace uksl.Models
         [Compare("Password", ErrorMessage = "Пароль і підтвердження паролю не співпадають.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Text)]
         [Display(Name = "Нікнейм")]
         [StringLength(15, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string NickName { get; set; }
 
-        [Required(ErrorMessage ="Поле '{0}' обов'язке для заповнення.")]
+        //[Required(ErrorMessage ="Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Text)]
         [Display(Name = "Ім'я")]
         [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Text)]
         [Display(Name = "Прізвище")]
         [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Text)]
         [Display(Name = "По-батькові")]
         [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string MiddleName { get; set; }
 
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Date)]
+        //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        //[DataType(DataType.Date)]
         [Display(Name = "Дата народження")]
-        public DateTime BirthDate { get; set; }
-        public IEnumerable<System.Web.Mvc.SelectListItem> UniversityList { get; set; }
-        [Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Custom)]
+        public string BirthDateText { get; set; }
+        public DateTime? BirthDate { get; set; }
+        //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
+        [DataType(DataType.Text)]
         [Display(Name = "Університет")]
-        public University SelectedUniversity { get; set; }
+        public string UniversityName { get; set; }
+        public int UniversityId { get; set; }
     }
-    public class University
-    {
-        public int Id { get; set; }
-        public string ShortName { get; set; }
-        public string LongName { get; set; }
-    }
+    //public class University
+    //{
+    //    public int Id { get; set; }
+    //    public string ShortName { get; set; }
+    //    public string LongName { get; set; }
+    //}
     public class ResetPasswordViewModel
     {
         [Required]

@@ -9,11 +9,11 @@
                     id: item.UniversityId
                 };
             });
-            $("#university").autocomplete({
+            $("#UniversityName").autocomplete({
                 source: data,
                 minLength: 2,
                 select: function (event, ui) {
-                    $("#university").val(ui.item.id);
+                    $("#UniversityId").val(ui.item.id);
                 }
             });
         }
@@ -41,28 +41,50 @@
         changeYear: true,
         showOtherMonths: true,
         selectOtherMonths: true,
-        maxDate: maxDate
+        maxDate: maxDate,
+        onSelect: function (dateText, inst) {
+            $("#BirthDate").val(inst.selectedDay + '/' + (inst.selectedMonth + 1) +  '/' + inst.selectedYear);
+            //console.dir(inst.selectedDay + '/' + (inst.selectedMonth + 1) + '/' + inst.selectedYear);
+        }
     });
     $.datepicker.setDefaults($.datepicker.regional['ua']);
     $(".date-picker").datepicker('setDate', null);
+
+    var gamerInputs = $('#gamerFields input')
+        .not(':input[type=hidden], :input[type=checkbox]');
+    //$(gamerInputs).each(function () {
+    //    this.required = false;
+    //});
     $("#chkbGamer").click(function () {
         if ($(this).is(':checked')) {
+            $(gamerInputs).each(function () {
+                this.required = true;
+            });
             $("#gamerFields").show();
         }
         else {
+            $(gamerInputs).each(function () {
+                this.required = false;
+            });
             $("#gamerFields").hide();
         }
     });
     $("#chkbMiddleName").click(function () {
         if ($(this).is(':checked')) {
+            $("#middleName input").prop('required', false);
             $("#middleName").hide();
         }
         else {
+            $("#middleName input").prop('required', true);
             $("#middleName").show();
         }
     });
     $("#chkbPersonal").click(function () {
         if ($(this).is(':checked')) {
+            $($('input')
+                .not(':input[type=submit], :input[type=hidden], :input[type=checkbox]')).each(function () {
+                    console.log(this.name + ' - ' + this.required);
+                });
             $(':input[type="submit"]').prop('disabled', false);
         }
         else {

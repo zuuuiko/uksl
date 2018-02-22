@@ -10,23 +10,26 @@
     @Html.AntiForgeryToken()
     @*<h4>Створити новий акаунт</h4>*@
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
@@ -42,12 +45,16 @@
             @Html.LabelFor(m => m.NickName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.NickName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.NickName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.SelectedUniversity, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.UniversityName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10 ui-widget">
-                <input id="university" class="form-control"/>
+                @Html.TextBoxFor(m => m.UniversityName, new { @class = "form-control" })
+                @*<input id="university" class="form-control"/>*@
+                @Html.ValidationMessageFor(m => m.UniversityName, "", new { @class = "text-danger" })
+                <input type="hidden" id="UniversityId" name="UniversityId">
                 @*@Html.TextBoxFor(m=>m.SelectedUniversity.Id,  new { @class = "form-control" })*@
             </div>
         </div>
@@ -55,18 +62,21 @@
             @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group" id = "middleName">
             @Html.LabelFor(m => m.MiddleName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.MiddleName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
@@ -78,10 +88,12 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.BirthDate, new { @class = "col-md-2 control-label" })
+            @Html.LabelFor(m => m.BirthDateText, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @*<input type="date" class="form-control" value="@Model.BirthDate"/>*@
-                @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control date-picker", @readonly="readonly" })
+                @Html.TextBoxFor(m => m.BirthDateText, new { @class = "form-control date-picker", @readonly="readonly" })
+                @Html.ValidationMessageFor(m => m.BirthDateText, "", new { @class = "text-danger" })
+                <input type="hidden" id="BirthDate" name="BirthDate">
             </div>
         </div>
     </div>
