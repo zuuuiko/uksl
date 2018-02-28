@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using uksl.Models;
+using uksl.DAL.Interfaces;
+using uksl.DAL.Entities;
 
 namespace uksl.Controllers
 {
@@ -172,7 +174,13 @@ namespace uksl.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
+        [HttpGet]
+        public JsonResult CheckName(string nickName)
+        {
+            var repo = RepoFabric.Create<Person>();
+            var result = repo.CheckUniqueField("nickname", nickName);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

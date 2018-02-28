@@ -16,6 +16,12 @@ namespace uksl.DAL.Repositories
         {
             connectionString = connStr;
         }
+
+        public bool CheckUniqueField(string fieldName, object fieldValue)
+        {
+            return false;
+        }
+
         public void Create(Person item)
         {
             throw new NotImplementedException();

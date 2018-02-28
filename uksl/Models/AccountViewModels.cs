@@ -84,6 +84,7 @@ namespace uksl.Models
         //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
         [DataType(DataType.Text)]
         [Display(Name = "Нікнейм")]
+        [System.Web.Mvc.Remote("CheckName", "Home", ErrorMessage = "Користувач з таким Нікнеймом вже існує.")]
         [StringLength(15, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string NickName { get; set; }
 
