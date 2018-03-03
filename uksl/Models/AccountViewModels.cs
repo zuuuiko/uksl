@@ -82,27 +82,27 @@ namespace uksl.Models
         public string ConfirmPassword { get; set; }
 
         //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Text)]
+        //[DataType(DataType.Text)]
         [Display(Name = "Нікнейм")]
-        [System.Web.Mvc.Remote("CheckName", "Home", ErrorMessage = "Користувач з таким Нікнеймом вже існує.")]
-        [StringLength(15, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
+        [System.Web.Mvc.Remote("CheckName", "Account", ErrorMessage = "Користувач з таким Нікнеймом вже існує.")]
+        //[StringLength(15, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string NickName { get; set; }
 
         //[Required(ErrorMessage ="Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Text)]
+        //[DataType(DataType.Text)]
         [Display(Name = "Ім'я")]
-        [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
+        //[StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string FirstName { get; set; }
 
         //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Text)]
+        //[DataType(DataType.Text)]
         [Display(Name = "Прізвище")]
-        [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
+        //[StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string LastName { get; set; }
         //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
-        [DataType(DataType.Text)]
+        //[DataType(DataType.Text)]
         [Display(Name = "По-батькові")]
-        [StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
+        //[StringLength(30, ErrorMessage = "{0} має складатися від {2} до {1} символів.", MinimumLength = 2)]
         public string MiddleName { get; set; }
 
         //[Required(ErrorMessage = "Поле '{0}' обов'язке для заповнення.")]
@@ -114,7 +114,7 @@ namespace uksl.Models
         [DataType(DataType.Text)]
         [Display(Name = "Університет")]
         public string UniversityName { get; set; }
-        public int UniversityId { get; set; }
+        public int? UniversityId { get; set; }
     }
     //public class University
     //{

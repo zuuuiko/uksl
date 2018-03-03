@@ -21,11 +21,11 @@ namespace uksl.DAL.Interfaces
     {
         public static IRepository<T> Create<T>() where T : class
         {
-            var repoClassName = "uksl.DAL.Repositories." + typeof(T).Name + "Repo`1"; ;
-            Type generic = Type.GetType(repoClassName);
-            Type constructedType = generic.MakeGenericType(typeof(T));
+            var repoClassName = "uksl.DAL.Repositories." + typeof(T).Name + "Repo"; ;
+            Type type = Type.GetType(repoClassName);
+            //Type constructedType = generic.MakeGenericType(typeof(T));
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            return Activator.CreateInstance(constructedType, new object[] { connectionString }) as IRepository<T>;
+            return Activator.CreateInstance(type, new object[] { connectionString }) as IRepository<T>;
         }
     }
 }

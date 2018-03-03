@@ -7,20 +7,17 @@ using uksl.Models;
 
 namespace uksl.App_Code.Utils
 {
-	public static class Mapper
-	{
-        public static Person ToPerson(RegisterViewModel obj, string aspUserId)
+    public static class Mapper
+    {
+        public static Person ToPerson(RegisterViewModel obj, string aspUserId) => new Person
         {
-            return new Person
-            {
-                AspNetUserId = aspUserId,
-                FName = obj.FirstName,
-                LName = obj.LastName,
-                MName = obj.MiddleName,
-                NickName = obj.NickName,
-                BirthDate = obj.BirthDate,
-                UniversityId = obj.UniversityId
-            };
-        }
-	}
+            AspNetUserId = aspUserId,
+            FName = obj.FirstName,
+            LName = obj.LastName,
+            MName = obj.MiddleName,
+            NickName = obj.NickName,
+            BirthDate = obj.BirthDate,
+            UniversityId = obj.UniversityId
+        };
+    }
 }

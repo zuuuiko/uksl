@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +22,28 @@ namespace uksl.DAL.Repositories
 
         public bool CheckUniqueField(string fieldName, object fieldValue)
         {
-            return false;
+            return true;
         }
 
         public void Create(Person item)
         {
-            throw new NotImplementedException();
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                db.Open();
+                var sql = "CreatePerson";
+                db.Execute(sql,
+                    new
+                    {
+                        pAspNetUserId = item.AspNetUserId,
+                        pFName = item.FName,
+                        pLName = item.LName,
+                        pMName = item.MName,
+                        pNickName = item.NickName,
+                        pBirthDate = item.BirthDate,
+                        pUniversityId = item.UniversityId
+                    },
+                    commandType: CommandType.StoredProcedure);
+            }
         }
 
         public void Delete(int id)

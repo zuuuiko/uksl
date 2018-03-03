@@ -12,6 +12,7 @@ using Microsoft.Owin.Security;
 using uksl.Models;
 using uksl.DAL.Interfaces;
 using uksl.DAL.Entities;
+using uksl.App_Code.Utils;
 
 namespace uksl.Controllers
 {
@@ -20,9 +21,11 @@ namespace uksl.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        public IRepository<Person> PersonRepo { get; private set; }
 
         public AccountController()
         {
+            PersonRepo = RepoFabric.Create<Person>();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -158,6 +161,8 @@ namespace uksl.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var person = Mapper.ToPerson(model, user.Id);
+                    PersonRepo.Create(person);
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -174,11 +179,11 @@ namespace uksl.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+        [AllowAnonymous]
         [HttpGet]
         public JsonResult CheckName(string nickName)
         {
-            var repo = RepoFabric.Create<Person>();
-            var result = repo.CheckUniqueField("nickname", nickName);
+            var result = PersonRepo.CheckUniqueField("nickname", nickName);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         //
