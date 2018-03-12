@@ -52,7 +52,10 @@
         }
     });
     $.datepicker.setDefaults($.datepicker.regional['ua']);
-    $(".date-picker").datepicker('setDate', $("#BirthDate").val());
+    var bd = $("#BirthDate").val();
+    var temp = bd.split(".");
+    bd = new Date(temp[2].slice(0, 4), temp[1] - 1, temp[0]);
+    $(".date-picker").datepicker('setDate', bd);
 
     //var gamerInputs = $('#gamerFields input')
     //    .not(':input[type=hidden], :input[type=checkbox]');
@@ -73,7 +76,7 @@
     //        $("#gamerFields").hide();
     //    }
     //});
-    if ($("#middleName").val()) {
+    if ($("#MiddleName").val()) {
         //$("#middleName input").prop('required', false);
         $("#middleName").show();
         $("#chkbMiddleName").prop("checked", false);
