@@ -186,6 +186,13 @@ namespace uksl.Controllers
             var result = PersonRepo.CheckUniqueField("nickname", nickName);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        [AllowAnonymous]
+        [HttpGet]
+        public JsonResult CheckEmail(string email)
+        {
+            var result = PersonRepo.CheckUniqueField("email", email);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

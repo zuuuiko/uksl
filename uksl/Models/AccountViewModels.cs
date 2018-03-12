@@ -67,6 +67,7 @@ namespace uksl.Models
     {
         [Required(ErrorMessage = "обов'язкове")]
         [EmailAddress(ErrorMessage = "не дійсне значення")]
+        [System.Web.Mvc.Remote("CheckEmail", "Account", ErrorMessage = "Користувач з таким email-ом вже існує.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

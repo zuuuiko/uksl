@@ -11,11 +11,13 @@ namespace uksl.DAL.Interfaces
     {
         List<T> GetAll();
         T Get(int id);
+        T Get(string aspId);
         List<T> Find(Func<T, Boolean> predicate);
         void Create(T item);
         void Update(T item);
         void Delete(int id);
         bool CheckUniqueField(string fieldName, object fieldValue);
+        bool CheckUniqueField(string fieldName, object fieldValue, string aspId);
     }
     public static class RepoFabric
     {

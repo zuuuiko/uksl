@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -12,6 +13,26 @@ namespace uksl.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        [Display(Name = "Нікнейм")]
+        [System.Web.Mvc.Remote("CheckName", "Manage", ErrorMessage = "Користувач з таким Нікнеймом вже існує.")]
+        public string NickName { get; set; }
+        [Display(Name = "Ім'я")]
+        public string FirstName { get; set; }
+        [Display(Name = "Прізвище")]
+        public string LastName { get; set; }
+        [Display(Name = "По-батькові")]
+        public string MiddleName { get; set; }
+        [Display(Name = "Дата народження")]
+        public string BirthDateText { get; set; }
+        public DateTime? BirthDate { get; set; }
+        [DataType(DataType.Text)]
+        [Display(Name = "Університет")]
+        public string UniversityName { get; set; }
+        public int? UniversityId { get; set; }
+        [EmailAddress(ErrorMessage = "не дійсне значення")]
+        [System.Web.Mvc.Remote("CheckEmail", "Manage", ErrorMessage = "Користувач з таким email-ом вже існує.")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
     }
 
     public class ManageLoginsViewModel

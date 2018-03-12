@@ -22,9 +22,26 @@ namespace uksl.DAL.Repositories
 
         public bool CheckUniqueField(string fieldName, object fieldValue)
         {
-            return true;
+            if (!System.Text.RegularExpressions.Regex.IsMatch(fieldName, "^[a-zA-Z0-9]+$")) return false;
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                db.Open();
+                var sql = "SELECT count(Id) FROM vPersons WHERE " + fieldName + " = @pFieldValue;";
+                var count = db.QuerySingle<int>(sql, new { pFieldValue = fieldValue });
+                return count == 0;
+            }
         }
-
+        public bool CheckUniqueField(string fieldName, object fieldValue, string aspId)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(fieldName, "^[a-zA-Z0-9]+$")) return false;
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                db.Open();
+                var sql = "SELECT count(Id) FROM vPersons WHERE AspNetUserId <> @pAspId and " + fieldName + " = @pFieldValue;";
+                var count = db.QuerySingle<int>(sql, new { pFieldValue = fieldValue, pAspId = aspId });
+                return count == 0;
+            }
+        }
         public void Create(Person item)
         {
             using (IDbConnection db = new SqlConnection(connectionString))
@@ -60,6 +77,15 @@ namespace uksl.DAL.Repositories
         {
             throw new NotImplementedException();
         }
+        public Person Get(string aspId)
+        {
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                db.Open();
+                var sql = "SELECT * FROM vPersons WHERE AspNetUserId = @pAspNetUserId;";
+                return db.QuerySingle<Person>(sql, new { pAspNetUserId = aspId });
+            }
+        }
 
         public List<Person> GetAll()
         {
@@ -68,7 +94,23 @@ namespace uksl.DAL.Repositories
 
         public void Update(Person item)
         {
-            throw new NotImplementedException();
+            using (IDbConnection db = new SqlConnection(connectionString))
+            {
+                db.Open();
+                var sql = "UpdatePerson";
+                db.Execute(sql,
+                    new
+                    {
+                        pAspNetUserId = item.AspNetUserId,
+                        pFName = item.FName,
+                        pLName = item.LName,
+                        pMName = item.MName,
+                        pNickName = item.NickName,
+                        pBirthDate = item.BirthDate,
+                        pUniversityId = item.UniversityId
+                    },
+                    commandType: CommandType.StoredProcedure);
+            }
         }
     }
 }

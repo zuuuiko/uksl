@@ -17,7 +17,19 @@ namespace uksl.App_Code.Utils
             MName = obj.MiddleName,
             NickName = obj.NickName,
             BirthDate = obj.BirthDate,
-            UniversityId = obj.UniversityId
+            UniversityId = obj.UniversityId,
+            Email = obj.Email
+        };
+        public static Person ToPerson(IndexViewModel obj, string aspUserId) => new Person
+        {
+            AspNetUserId = aspUserId,
+            FName = obj.FirstName,
+            LName = obj.LastName,
+            MName = obj.MiddleName,
+            NickName = obj.NickName,
+            BirthDate = obj.BirthDate,
+            UniversityId = obj.UniversityId,
+            Email = obj.Email
         };
     }
 }

@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using uksl.App_Code.Utils;
+using uksl.DAL.Entities;
+using uksl.DAL.Interfaces;
 using uksl.Models;
 
 namespace uksl.Controllers
@@ -15,15 +18,18 @@ namespace uksl.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        public IRepository<Person> PersonRepo { get; private set; }
         public ManageController()
         {
+            PersonRepo = RepoFabric.Create<Person>();
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+            :this()
         {
             UserManager = userManager;
             SignInManager = signInManager;
+
         }
 
         public ApplicationSignInManager SignInManager
@@ -64,17 +70,50 @@ namespace uksl.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = PersonRepo.Get(userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                PhoneNumber = user.PhoneNumber,//await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                 BirthDate = user.BirthDate,
+                 FirstName = user.FName,
+                 LastName = user.LName,
+                 MiddleName = user.MName,
+                 NickName = user.NickName,
+                 UniversityId = user.UniversityId,
+                 Email = user.Email
             };
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Update(IndexViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var person = Mapper.ToPerson(model, User.Identity.GetUserId());
+                await UserManager.SetEmailAsync(person.AspNetUserId, person.Email);
+                PersonRepo.Update(person);
+            }
 
+            // If we got this far, something failed, redisplay form
+            return RedirectToAction("Index", "Manage");
+        }
+        [HttpGet]
+        public JsonResult CheckName(string nickName)
+        {
+            var result = PersonRepo.CheckUniqueField("nickname", nickName, User.Identity.GetUserId());
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult CheckEmail(string email)
+        {
+            var result = PersonRepo.CheckUniqueField("email", email, User.Identity.GetUserId());
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]
