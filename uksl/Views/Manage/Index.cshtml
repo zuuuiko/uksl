@@ -90,6 +90,13 @@
         @*<h4>Створити новий акаунт</h4>*@
         <hr />
         @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.TeamName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.TeamName, new { @class = "form-control", @readonly="true" })
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
@@ -97,7 +104,6 @@
                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
             </div>
         </div>
-        
         <div class="form-group">
             @Html.LabelFor(m => m.NickName, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
@@ -150,7 +156,7 @@
                 @*<input type="date" class="form-control" value="@Model.BirthDate"/>*@
                 @Html.TextBoxFor(m => m.BirthDateText, new { @class = "form-control date-picker", @readonly = "readonly" })
                 @Html.ValidationMessageFor(m => m.BirthDateText, "", new { @class = "text-danger" })
-                @Html.Hidden("BirthDate", Model.BirthDate)
+                @Html.Hidden("BirthDate", Model.BirthDate?.ToString("dd.MM.yyyy"))
                 @*<input type="hidden" id="BirthDate" name="BirthDate">*@
             </div>
         </div>

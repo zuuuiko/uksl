@@ -84,7 +84,8 @@ namespace uksl.Controllers
                  MiddleName = user.MName,
                  NickName = user.NickName,
                  UniversityId = user.UniversityId,
-                 Email = user.Email
+                 Email = user.Email,
+                 TeamName = user.TeamName
             };
             return View(model);
         }

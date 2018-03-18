@@ -1,0 +1,3 @@
+﻿$(function () {
+    $("#regulation-tabs").tabs();
+});

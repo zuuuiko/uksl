@@ -33,6 +33,8 @@ namespace uksl.Models
         [System.Web.Mvc.Remote("CheckEmail", "Manage", ErrorMessage = "Користувач з таким email-ом вже існує.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Display(Name = "Команда")]
+        public string TeamName { get; set; }
     }
 
     public class ManageLoginsViewModel

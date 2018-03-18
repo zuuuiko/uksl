@@ -12,7 +12,8 @@
             var univer = data.find(function (el) {
                 return el.id == $("#UniversityId").val();
             });
-            $("#UniversityName").val(univer.value);
+            if (univer)
+                $("#UniversityName").val(univer.value);
             $("#UniversityName").autocomplete({
                 source: data,
                 minLength: 2,
@@ -53,8 +54,10 @@
     });
     $.datepicker.setDefaults($.datepicker.regional['ua']);
     var bd = $("#BirthDate").val();
-    var temp = bd.split(".");
-    bd = new Date(temp[2].slice(0, 4), temp[1] - 1, temp[0]);
+    if (bd) {
+        var temp = bd.split(".");
+        bd = new Date(temp[2].slice(0, 4), temp[1] - 1, temp[0]);
+    }
     $(".date-picker").datepicker('setDate', bd);
 
     //var gamerInputs = $('#gamerFields input')
