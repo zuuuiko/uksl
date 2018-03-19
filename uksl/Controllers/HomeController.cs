@@ -21,6 +21,14 @@ namespace uksl.Controllers
         {
             return View();
         }
+        public ActionResult TournamentDota2()
+        {
+            return View();
+        }
+        public ActionResult TournamentCsGo()
+        {
+            return View();
+        }
         public ActionResult Regulation()
         {
             return View();

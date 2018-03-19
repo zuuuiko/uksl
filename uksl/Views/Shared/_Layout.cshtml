@@ -22,10 +22,12 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Новини", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Учасники", "Participant", "Home")</li>
-                    <li>@Html.ActionLink("Етапи", "Step", "Home")</li>
+                    @*<li>@Html.ActionLink("Учасники", "Participant", "Home")</li>*@
+                    <li>@Html.ActionLink("Турнір Dota2", "TournamentDota2", "Home")</li>
+                    <li>@Html.ActionLink("Турнір CS: GO", "TournamentCsGo", "Home")</li>
+                    @*<li>@Html.ActionLink("Етапи", "Step", "Home")</li>*@
                     <li>@Html.ActionLink("Регламент", "Regulation", "Home")</li>
-                    <li>@Html.ActionLink("Статистика", "Statistic", "Home")</li>
+                    @*<li>@Html.ActionLink("Статистика", "Statistic", "Home")</li>*@
                     <li>@Html.ActionLink("Про нас", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
                 </ul>

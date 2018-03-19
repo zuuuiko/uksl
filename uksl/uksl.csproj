@@ -286,6 +286,8 @@
     <Content Include="Views\Home\Statistic.cshtml" />
     <Content Include="Views\Home\Step.cshtml" />
     <Content Include="Views\Home\Regulation - Copy.cshtml" />
+    <Content Include="Views\Home\TournamentDota2.cshtml" />
+    <Content Include="Views\Home\TournamentCsGo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
