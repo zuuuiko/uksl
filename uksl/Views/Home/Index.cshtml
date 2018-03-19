@@ -1,31 +1,100 @@
 ﻿@{
     ViewBag.Title = "УКСЛ";
 }
+@Styles.Render("~/Content/news.css")
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-<div class="jumbotron">
-    <h1>Новини</h1>
-    @*<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            <div class="item active">
+                <img src="~/Content/images/logo-alibaba.png">
+                <div class="carousel-caption">
+                    <h4><a href="#news0">Alibaba просуває кіберспорт на Олімпіаду</a></h4>
+                    <p>Отже, новина полягає в наступному: у кіберспорту в якості олімпійського виду спорту з'явився потужний лобіст в особі китайської корпорації Alibaba Group.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="http://placehold.it/760x400/cccccc/ffffff">
+                <div class="carousel-caption">
+                    <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+            </div><!-- End Item -->
+
+            <div class="item">
+                <img src="http://placehold.it/760x400/999999/cccccc">
+                <div class="carousel-caption">
+                    <h4><a href="#">consetetur sadipscing elitr, sed diam nonumy eirmod</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+            </div><!-- End Item -->
+
+            <div class="item">
+                <img src="http://placehold.it/760x400/dddddd/333333">
+                <div class="carousel-caption">
+                    <h4><a href="#">tempor invidunt ut labore et dolore</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+            </div><!-- End Item -->
+
+            <div class="item">
+                <img src="http://placehold.it/760x400/999999/cccccc">
+                <div class="carousel-caption">
+                    <h4><a href="#">magna aliquyam erat, sed diam voluptua</a></h4>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                </div>
+            </div><!-- End Item -->
+        </div><!-- End Carousel Inner -->
+
+        <ul class="list-group col-sm-4">
+            <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>Alibaba просуває кіберспорт на Олімпіаду</h4></li>
+            <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>Lorem ipsum dolor sit amet consetetur sadipscing</h4></li>
+            <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>consetetur sadipscing elitr, sed diam nonumy eirmod</h4></li>
+            <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>tempor invidunt ut labore et dolore</h4></li>
+            <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>magna aliquyam erat, sed diam voluptua</h4></li>
+        </ul>
+        <!-- Controls -->
+        <div class="carousel-controls">
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div><!-- End Carousel -->
+    <br />
+    <hr />
+    <div>
+        <div id="news0">
+            <h2>
+                Alibaba просуває кіберспорт на Олімпіаду
+            </h2>
+            <p>
+                Отже, новина полягає в наступному: у кіберспорту в якості олімпійського виду спорту з'явився потужний лобіст в особі китайської корпорації Alibaba Group. Глава спортивного підрозділу компанії (називається AliSports) заявив, що корпорація підтримує включення кіберспорту в програму ОІ та буде рада допомогти в цій благородній справі (читай «пролобіювати це рішення»). Особливо важливо тут те, що це не черговий популізм і голослівні заяви. Alibaba Group є офіційним спонсором ОІ до 2028 року і володіє всіма необхідними ресурсами і важелями впливу, щоб домогтися свого рішення.
+            </p>
+            <p>
+                Але є не менш важливі і цікаві нюанси. Мотивуючи тим, що за час спілкування з Міжнародним олімпійським комітетом Alibaba стала краще розуміти його ідеали, головний з яких звучить як «мир у всьому світі» (переклад вільний), корпорація ратує не за весь кіберспорт цілком, а лише за окремі його дисципліни. У вигляді - увага - спортивних симуляторів, таких як футбольні, баскетбольні та гоночні.
+            </p>
+            <p>
+                Наступний нюанс полягає в тому, що це болючий укол (читай «перо під ребро») іншому китайському гігантові в особі корпорації Tencent. Саме вона є власником розробника найпопулярнішою киберспортівной гри в світі в особі League of Legends, яка саме виходячи зі своєї популярності може претендувати на включення в програму ОІ. Ми не знаємо, де в цій грі з абсолютно мультяшної графікою можна знайти «насильство і вбивство» (о, як же на її тлі жорстокі «Том і Джеррі» і «Ну, постривай!»), Але впевнені, що, як і з допінгом, це залежить тільки від того, хто шукає.
+            </p>
+            <p>
+                Під кінець Alibaba заявляє, що ігроробів на час ОІ повинні безкоштовно ділитися з організаторами правом інтелектуальної власності на свої ігри, і відбиратися гри (+ коригуватися правила проведення змагань) повинні щорічно, а не раз на чотири роки. Завершує свій виступ Alibaba потужним аперкотом всім конкурентам: «Ми, як організатор змагань, при цьому не є ігроробів, більше підходимо під принципи ОІ, головним з яких є справедливість (від ред.: агов, а де ж «мир у всьому світі»? ). А якщо ви є виробником або видавцем гри, то ви за замовчуванням підозрюєтеся в лобіюванні своїх ігор на ОІ виключно заради вигоди». (Від ред.: у нас вже не вистачає сарказму коментувати це твердження).
+            </p>
+            <p>
+                Прогнозуємо продовження цікавої сутички між двома титанами - з фланговими атаками, заходами в тил і партизанською війною. Наприклад, буквально днями Tencent інвестував близько $ 1 млрд в дві китайські стрімінговие платформи Huya & Douyu. А Alibaba ДОПОВНЕНО весь світ під твіти учасників організованого їй фіналу ігор WESG про тарганів і щурів в номерах. У найцікавіші часи живемо, панове...
+            </p>
+            <p>
+                Джерело: Telegram-канал "Кіберспорт | Індустрія"
+            </p>
+        </div>
+    </div>
 </div>
-
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/script/news.js")
+}
