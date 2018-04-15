@@ -3,5 +3,35 @@
     ViewBag.Title = "Турнір Dota2";
 }
 
-@*<h2>Step</h2>*@
+<div>
+    <div class="university-list" style="display:none;">
+        <div class='university-list-body'></div>
+        <div class='university-list-header'>
+            <span>
+                Оберіть Ваш регіон
+            </span>
+        </div>
+    </div>
+    <div id="tournament-tabs" data-tournament="@ViewBag.CurrentTournamentId">
+        <ul>
+            <li><a href="#stage1">Перший етап</a></li>
+            <li><a href="#stage2">Другий етап</a></li>
+            <li><a href="#stage3">Третій етап</a></li>
+        </ul>
+        <div id="stage1">
+            @*<canvas></canvas>*@
+        </div>
+        <div id="stage2">
+            @*<canvas></canvas>*@
+        </div>
+        <div id="stage3">
+            @*<canvas></canvas>*@
+        </div>
+    </div>
+
+</div>
+@section Scripts {
+    @*@Scripts.Render("~/script/tournaments.js")*@
+    @Scripts.Render("~/bundles/tournamentDrawer")
+}
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using uksl.DAL.Interfaces;
 
 namespace uksl.Controllers
 {
@@ -23,10 +24,12 @@ namespace uksl.Controllers
         }
         public ActionResult TournamentDota2()
         {
+            ViewBag.CurrentTournamentId = 1;
             return View();
         }
         public ActionResult TournamentCsGo()
         {
+            ViewBag.CurrentTournamentId = 2;
             return View();
         }
         public ActionResult Regulation()

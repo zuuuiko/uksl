@@ -28,7 +28,7 @@ namespace uksl.Models
         [DataType(DataType.Text)]
         [Display(Name = "Університет")]
         public string UniversityName { get; set; }
-        public int? UniversityId { get; set; }
+        public decimal? UniversityId { get; set; }
         [EmailAddress(ErrorMessage = "не дійсне значення")]
         [System.Web.Mvc.Remote("CheckEmail", "Manage", ErrorMessage = "Користувач з таким email-ом вже існує.")]
         [Display(Name = "Email")]

@@ -11,14 +11,14 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
+            @*<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>*@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Новини", "Index", "Home")</li>
@@ -29,7 +29,7 @@
                     <li>@Html.ActionLink("Регламент", "Regulation", "Home")</li>
                     @*<li>@Html.ActionLink("Статистика", "Statistic", "Home")</li>*@
                     <li>@Html.ActionLink("Про нас", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Контакти", "Contact", "Home")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,14 +37,29 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - УКСЛ</p>
-        </footer>
+        @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - УКСЛ</p>
+            </footer>*@
     </div>
-
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a>&copy; @DateTime.Now.Year - УКСЛ</a></li>
+                    <li><a>+38 097 310 91 04</a></li>
+                    <li><a href="mailto:ucsl.gaming@gmail.com">ucsl.gaming@gmail.com</a></li>
+                    <li><a href="https://www.twitch.tv/uksl"><i class="fab fa-twitch fa-lg"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC22AVwcKaF8hivS3kPtWKqw"><i class="fab fa-youtube fa-lg"></i></a></li>
+                    <li><a href="https://www.facebook.com/UCSL-1472568039520285/"><i class="fab fa-facebook-square fa-lg"></i></a></li>
+                    <li><a href="https://www.instagram.com/cybersport_league/"><i class="fab fa-instagram fa-lg"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/fa")
     @RenderSection("scripts", required: false)
 </body>
 </html>

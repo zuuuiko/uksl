@@ -55,20 +55,21 @@ ul li:before {
     content: none;
 }
 
-.regulation-menu {
+.university-list {
     background: #080808;
     position: fixed;
-    width: 390px;
-    left: -370px;
-    top: 100px;
+    width: 190px;
+    left: -145px;
+    top: 130px;
     transition: left 0.5s ease-out 0.0s;
+    z-index:99;
 }
 
-    .regulation-menu:hover {
+    .university-list:hover {
         left: 0px;
     }
 
-    .regulation-menu a {
+    .university-list p {
         margin: 5px 10px;
         text-decoration: none;
         padding: 3px;
@@ -81,11 +82,35 @@ ul li:before {
         transition: background-position 0.3s ease-out 0.0s, color 0.3s ease-out 0.0s;
     }
 
-        .regulation-menu a:hover {
-            /*background: rgba(159, 38, 38, 0.40);*/
-            color: #dc1010;
-            background-position: left bottom;
-        }
+    .university-list p:hover {
+        /*background: rgba(159, 38, 38, 0.40);*/
+        color: #dc1010;
+        background-position: left bottom;
+    }
+
+.university-list-header {
+    color: #999999;
+    /*position:relative;*/
+    float: left;
+    width: 40px;
+    height: 200px;
+}
+
+    .university-list-header span {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        line-height: 200px;
+        display: block;
+        position: absolute;
+        bottom: 0%;
+        left: 52%;
+    }
+
+.university-list-body {
+    /*position: relative;*/
+    float: left;
+    width: 150px;
+}
 
 .anch {
     height: 50px;
@@ -139,3 +164,38 @@ ul li:before {
 * html .ui-autocomplete {
     height: 200px;
 }
+
+
+.ui-tabs-vertical {
+    width: 55em;
+}
+
+    .ui-tabs-vertical .ui-tabs-nav {
+        padding: .2em .1em .2em .2em;
+        float: left;
+        width: 12em;
+    }
+
+        .ui-tabs-vertical .ui-tabs-nav li {
+            clear: left;
+            width: 100%;
+            border-bottom-width: 1px !important;
+            border-right-width: 0 !important;
+            margin: 0 -1px .2em 0;
+        }
+
+            .ui-tabs-vertical .ui-tabs-nav li a {
+                display: block;
+            }
+
+            .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+                padding-bottom: 0;
+                padding-right: .1em;
+                border-right-width: 1px;
+            }
+
+    .ui-tabs-vertical .ui-tabs-panel {
+        padding: 1em;
+        float: right;
+        width: 40em;
+    }

@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using uksl.App_Code.Utils;
 using uksl.DAL.Entities;
 using uksl.DAL.Interfaces;
+using uksl.DAL.Repositories;
 using uksl.Models;
 
 namespace uksl.Controllers
@@ -18,10 +19,10 @@ namespace uksl.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public IRepository<Person> PersonRepo { get; private set; }
+        public IPersonRepository PersonRepo { get; private set; }
         public ManageController()
         {
-            PersonRepo = RepoFabric.Create<Person>();
+            PersonRepo = new PersonRepository();
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)

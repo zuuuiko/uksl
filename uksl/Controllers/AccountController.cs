@@ -13,6 +13,7 @@ using uksl.Models;
 using uksl.DAL.Interfaces;
 using uksl.DAL.Entities;
 using uksl.App_Code.Utils;
+using uksl.DAL.Repositories;
 
 namespace uksl.Controllers
 {
@@ -21,11 +22,11 @@ namespace uksl.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        public IRepository<Person> PersonRepo { get; private set; }
+        public IPersonRepository PersonRepo { get; private set; }
 
         public AccountController()
         {
-            PersonRepo = RepoFabric.Create<Person>();
+            PersonRepo = new PersonRepository();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)

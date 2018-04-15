@@ -121,6 +121,9 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +132,12 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -190,7 +199,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UcslApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,8 +217,30 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\data\vuz.xml" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\fa\css\fa-svg-with-js.css" />
+    <Content Include="Content\fa\js\fa-brands.js" />
+    <Content Include="Content\fa\js\fa-brands.min.js" />
+    <Content Include="Content\fa\js\fa-regular.js" />
+    <Content Include="Content\fa\js\fa-regular.min.js" />
+    <Content Include="Content\fa\js\fa-solid.js" />
+    <Content Include="Content\fa\js\fa-solid.min.js" />
+    <Content Include="Content\fa\js\fa-v4-shims.js" />
+    <Content Include="Content\fa\js\fa-v4-shims.min.js" />
+    <Content Include="Content\fa\js\fontawesome-all.js" />
+    <Content Include="Content\fa\js\fontawesome-all.min.js" />
+    <Content Include="Content\fa\js\fontawesome.js" />
+    <Content Include="Content\fa\js\fontawesome.min.js" />
+    <Content Include="Content\images\CSGO-Wallpaper.jpg" />
     <Content Include="Content\images\Dual_Ring-1s-16px.gif" />
     <Content Include="Content\images\logo-alibaba.png" />
+    <Content Include="Content\images\news1_1.png" />
+    <Content Include="Content\images\news1_2.png" />
+    <Content Include="Content\images\news2_1.png" />
+    <Content Include="Content\images\news2_2.png" />
+    <Content Include="Content\images\news2_3.png" />
+    <Content Include="Content\images\news2_4.png" />
+    <Content Include="Content\images\news2_5.png" />
+    <Content Include="Content\images\Steam.jpg" />
     <Content Include="Content\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\images\ui-icons_555555_256x240.png" />
     <Content Include="Content\images\ui-icons_777620_256x240.png" />
@@ -245,6 +278,13 @@
     <Content Include="script\news.js" />
     <Content Include="script\regulation.js" />
     <Content Include="script\register.js" />
+    <Content Include="script\TournamentDrawer\enums\RoundTypes.js" />
+    <Content Include="script\TournamentDrawer\lib\createjs.min.js" />
+    <Content Include="script\TournamentDrawer\lib\easeljs-0.8.0.min.js" />
+    <Content Include="script\TournamentDrawer\scripts\drawer.js" />
+    <Content Include="script\TournamentDrawer\scripts\match.js" />
+    <Content Include="script\TournamentDrawer\scripts\round.js" />
+    <Content Include="script\tournaments.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

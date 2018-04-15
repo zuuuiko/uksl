@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,15 +12,9 @@ using uksl.DAL.Interfaces;
 
 namespace uksl.DAL.Repositories
 {
-    class PersonRepo : IRepository<Person>
+    public class PersonRepository : IPersonRepository
     {
-        private readonly string connectionString;
-
-        public PersonRepo(string connStr)
-        {
-            connectionString = connStr;
-        }
-
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public bool CheckUniqueField(string fieldName, object fieldValue)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(fieldName, "^[a-zA-Z0-9]+$")) return false;
@@ -62,17 +57,14 @@ namespace uksl.DAL.Repositories
                     commandType: CommandType.StoredProcedure);
             }
         }
-
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
-
         public List<Person> Find(Func<Person, bool> predicate)
         {
             throw new NotImplementedException();
         }
-
         public Person Get(int id)
         {
             throw new NotImplementedException();
@@ -86,12 +78,10 @@ namespace uksl.DAL.Repositories
                 return db.QuerySingle<Person>(sql, new { pAspNetUserId = aspId });
             }
         }
-
         public List<Person> GetAll()
         {
             throw new NotImplementedException();
         }
-
         public void Update(Person item)
         {
             using (IDbConnection db = new SqlConnection(connectionString))

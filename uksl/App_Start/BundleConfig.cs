@@ -15,6 +15,17 @@ namespace uksl
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/tournamentDrawer").Include(
+                        "~/script/TournamentDrawer/lib/createjs.min.js",
+                        "~/script/TournamentDrawer/lib/easeljs-{version}.min.js",
+                        "~/script/TournamentDrawer/scripts/match.js",
+                        "~/script/TournamentDrawer/scripts/round.js",
+                        "~/script/TournamentDrawer/scripts/drawer.js",
+                        "~/script/tournaments.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/fa").Include(
+                        "~/Content/fa/js/fontawesome-all.min.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
